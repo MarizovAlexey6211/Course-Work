@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "adip84Zda/yoQw4hf9BVN9v+JTESNuR8YRS8+c95WKC0nrTXTCB4WMX5AKRWDA0XP1ooyLnR0EkWsLyu+W1RMg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Win_10\\source\\repos\\TextComparerMA\\TextComparerMA\\TextComparerMA.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Win_10\\.nuget\\packages\\dynamicdata\\7.12.8\\dynamicdata.7.12.8.nupkg.sha512",
+    "C:\\Users\\Win_10\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
+    "C:\\Users\\Win_10\\.nuget\\packages\\reactiveui\\18.4.1\\reactiveui.18.4.1.nupkg.sha512",
+    "C:\\Users\\Win_10\\.nuget\\packages\\reactiveui.wpf\\18.4.1\\reactiveui.wpf.18.4.1.nupkg.sha512",
+    "C:\\Users\\Win_10\\.nuget\\packages\\splat\\14.5.1\\splat.14.5.1.nupkg.sha512",
+    "C:\\Users\\Win_10\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,100 @@
+﻿<Window x:Class="TextComparerMA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextComparerMA" xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        MinHeight="450"
+        MinWidth="800"
+        Title="MainWindow" Height="650" Width="1200"
+        Background = "#36393F"
+        WindowStyle="None">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+
+                <RowDefinition />
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Text Comparer" Grid.Row="0" Grid.Column="0" FontSize="20" Foreground="BlueViolet"/>
+
+            <Border Grid.Row="0" Grid.ColumnSpan="4"  Background="DimGray">
+                <Label Content="Text Comparer" Grid.Row="0" Grid.Column="0" FontSize="12" Foreground="Red"/>
+            </Border>
+
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="3">
+                <Button Width="25" Height="25"
+                                    Content="🗕"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Foreground="Red"
+                                    FontWeight="Bold"
+                                    Margin="0,0,0,3"
+                                    Click="ButtonMinimize_Click"/>
+
+                <Button Width="25" Height="25"
+                                    HorizontalAlignment="Center"
+                                    Content="🗇"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Foreground="Red"
+                                    FontWeight="Bold"
+                                    Click="WindowStateButton_Click"/>
+
+                <Button Width="25" Height="25"
+                                    Content="✖"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Foreground="Red"
+                                    FontWeight="Bold"
+                                    Click="ButtonExit_Click"/>
+            </StackPanel>
+
+
+
+
+            <TextBox Grid.Row="1" Grid.Column="0"
+                x:Name="TextBoxLineNumbers"  FontSize="17" IsReadOnly="True" Text="" Foreground="Crimson"  Background="Transparent" Margin="0, 20, 0, 20" HorizontalAlignment="Right" Width="45" FontFamily="Segoe UI"/>
+
+            <toolkit:RichTextBox x:Name="TextOld" Text ="{Binding OldData, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" Grid.Row="1" Grid.Column="1"
+                                 ScrollBar.Scroll="TextOld_Scroll" Block.LineHeight="1" FontSize="17"
+                                 
+                                 AcceptsReturn="True" Margin="0, 20, 20, 20" TextChanged="TextOld_TextChanged">
+            </toolkit:RichTextBox>
+
+            <TextBox Grid.Row="1" Grid.Column="2"
+                x:Name="TextBoxLineNumbersTwo"  FontSize="17" IsReadOnly="True" Text="" Foreground="Crimson"  Background="Transparent" Margin="0, 20, 0, 20" HorizontalAlignment="Right" Width="45" FontFamily="Segoe UI"/>
+
+            <toolkit:RichTextBox x:Name="TextNew" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Visible"  Grid.Row="1" Grid.Column="3" Margin="0, 20, 20, 20" 
+                                 Text ="{Binding NewData, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextNew_TextChanged"
+                                 Block.LineHeight="1" FontSize="17"
+                                  Padding="1,1,1,1"
+                                 ScrollBar.Scroll="TextNew_Scroll">
+
+            </toolkit:RichTextBox>
+
+
+
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right">
+                <Button Content="Сравнить" Margin="35,6,3,6" Width="131" Click="Button_Click"/>
+                <Button Content="Сохранить" Margin="35,6,3,6" Width="145" Click="Button_Click_Save"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left">
+                <Button x:Name="Button_download_old" Content="Загрузить старый текст" Margin="35,6,3,6" Click="Button_download_old_Click"/>
+                <Button x:Name="Button_download_new" Content="Загрузить новый текст" Margin="35,6,3,6" Click="Button_download_new_Click"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>
